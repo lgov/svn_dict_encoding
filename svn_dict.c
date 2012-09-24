@@ -129,7 +129,15 @@ int main(void)
 
     gzip_dict_len = compress_str(global_pool, bkt_alloc,
                                 propfind_resp, orig_len,
-                                 "repository-uuidgetlastmodifiedgetcontenttypegetcontentlengtsupportedlockdiscoveryresourcetypemultistatusencodingversiontagcreationdatepropstathreflockexclusivewritescopetypensdavxml>\n<D:</D:<lp3:<lp1:",
+                                 "<?xml version='1.0' encoding='utf-8'?><D:multistatus xmlns:D='DAV:' xmlns:ns0='DAV:'>"
+                                 "<D:response xmlns:S='http://subversion.tigris.org/xmlns/svn/' xmlns:C='http://subversion.tigris.org/xmlns/custom/' xmlns:V='http://subversion.tigris.org/xmlns/dav/' xmlns:lp1='DAV:' xmlns:lp3='http://subversion.tigris.org/xmlns/dav/' xmlns:lp2='http://apache.org/dav/props/'><D:href>"
+                                 "<D:propstat><D:prop><S:eol-style>"
+                                 "</lp1:getcontentlength><lp1:getcontenttype>"
+                                 "</lp1:getetag><lp1:creationdate></lp1:creationdate><lp1:getlastmodified>"
+                                 "</lp1:version-name><lp1:creator-displayname></lp3:md5-checksum><lp3:repository-uuid>"
+                                 "<D:supportedlock><D:lockentry><D:lockscope><D:locktype>"
+                                 "</D:lockentry></D:supportedlock><D:lockdiscovery/></D:prop>"
+                                 "</D:status></D:propstat></D:response></D:multistatus>",
                                 &defl_bkt);
     printf("orig_len: %d, gzip_len: %d, gzip_dict_len: %d\n", orig_len, gzip_len,
            gzip_dict_len);

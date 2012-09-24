@@ -6,7 +6,7 @@ CFLAGS=-g
 LIB_PATHS=-L/opt/local/lib -L/usr/local/lib
 INC_PATHS=-I/opt/local/include/apr-1 -I/opt/local/include -I/usr/local/include/serf-2
 
-LIBS=-lapr-1 -laprutil-1 -lserf-2
+LIBS=-lapr-1 -laprutil-1 -lserf-2 -lz
 
 OBJS=$(addprefix $(OBJDIR)/, svn_dict.o)
 OBJDIR=build

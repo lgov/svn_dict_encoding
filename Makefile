@@ -8,7 +8,7 @@ INC_PATHS=-I/opt/local/include/apr-1 -I/opt/local/include -I/usr/local/include/s
 
 LIBS=-lapr-1 -laprutil-1 -lserf-2
 
-OBJS=$(addprefix $(OBJDIR)/, svn_dict)
+OBJS=$(addprefix $(OBJDIR)/, svn_dict.o)
 OBJDIR=build
 
 svn_dict: $(OBJS)
